@@ -1,0 +1,72 @@
+.header {
+  background-color: var(--dark-color);
+  width: 100%;
+  position: fixed;
+}
+
+.header-container {
+  justify-content: space-between;
+  align-items: center;
+  width: 1440px;
+  height: 120px;
+  margin: 0 auto;
+  padding: 0 36px;
+  display: flex;
+}
+
+.logo-container {
+  cursor: pointer;
+  outline: none;
+  align-items: center;
+  display: flex;
+}
+
+.logo-image {
+  border-radius: 1000px;
+  width: 146px;
+  height: 82px;
+}
+
+.logo-text {
+  color: var(--light-color);
+  margin-left: 12px;
+  font-size: 36px;
+}
+
+.logo-text:hover {
+  color: var(--active-color);
+}
+
+.nav-link {
+  color: var(--light-color);
+  font-size: 30px;
+}
+
+.nav-link.active, .nav-link:hover, .nav-link:focus, .nav-link.current {
+  color: var(--active-color);
+}
+
+@media (width >= 1400px) {
+  .navbar-expand-xxl .navbar-nav .nav-link {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.add-task-button {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border-radius: 1000px;
+  justify-content: center;
+  align-items: center;
+  width: 178px;
+  height: 78px;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+}
+
+.add-task-button:hover {
+  background-color: var(--active-color);
+}
+/*# sourceMappingURL=index.61d3354a.css.map */

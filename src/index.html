@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster</title>
+    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+        <header class="header">
+      <div class="header-container">
+      <a href="index.html" aria-label="TaskMaster Home" class="logo-container">
+        <img
+          class="logo-image"
+          srcset="
+            ./images/logo_TaskMaster_1x.jpg 1x,
+            ./images/logo_TaskMaster_2x.jpg 2x
+          "
+          src="./images/logo_TaskMaster_1x.jpg"
+          alt="photo"
+          width="180"
+        />
+        <span class="logo-text">TaskMaster</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <nav class="navbar navbar-expand-xxl" >
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav" >
+        <a class="nav-link " href="index.html" >Home</a>
+        <a class="nav-link" href="tasks.html">Tasks</a>
+        <a class="nav-link" href="contacts.html">Contacts</a>
+      </div>
+    </div>
+        </ul>
+      </nav>
+      <button type="button" class="add-task-button ">Add task</button>
+      </div>
+    </header>
+    <script src="../dist/index.js" type="module"></script>
+  </body>
+</html>

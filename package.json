@@ -1,0 +1,21 @@
+{
+  "name": "taskmaster_typescript_parcel",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://Marini23.github.io/taskmaster_typescript_parcel",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "keywords": [],
+  "author": "Maryna Udovychenko <marina.udovychenko@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "nanoid": "^5.0.7"
+  }
+}
