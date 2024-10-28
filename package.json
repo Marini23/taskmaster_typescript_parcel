@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "nanoid": "^5.0.7"
+    "nanoid": "^5.0.7",
+    "notyf": "^3.10.0"
   }
 }

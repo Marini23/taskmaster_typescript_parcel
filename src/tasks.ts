@@ -1,4 +1,7 @@
+import { Notyf } from "notyf";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+const notyf = new Notyf();
 
 enum Category {
   Work,
@@ -24,30 +27,25 @@ type Task = {
 
 let tasks: Task[] = [];
 
-const modal: HTMLElement = document.querySelector(
-  ".modal-content"
-) as HTMLElement;
-const overlay: HTMLDivElement = document.querySelector(
-  ".overlay"
-) as HTMLDivElement;
-const openModalBtn: HTMLButtonElement = document.querySelector(
+const modal = document.querySelector(".modal-content") as HTMLElement;
+const overlay = document.querySelector(".overlay") as HTMLDivElement;
+const openModalBtn = document.querySelector(
   ".btn-modal-open"
 ) as HTMLButtonElement;
-const closeModalBtn: HTMLButtonElement =
-  document.querySelector<HTMLButtonElement>(
-    ".btn-modal-close"
-  ) as HTMLButtonElement;
+const closeModalBtn = document.querySelector(
+  ".btn-modal-close"
+) as HTMLButtonElement;
 
-console.log(modal);
+const form = document.querySelector("form") as HTMLFormElement;
+
 const openModal = function (): void {
-  console.log("open");
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
 
 openModalBtn.addEventListener("click", openModal);
 
-const closeModal = function () {
+const closeModal = function (): void {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
@@ -56,9 +54,27 @@ closeModalBtn.addEventListener("click", closeModal);
 
 overlay.addEventListener("click", closeModal);
 
-document.addEventListener("keydown", function (e) {
-  console.log(e.key);
+document.addEventListener("keydown", function (e): void {
   if (e.key === "Escape" && !modal.classList.contains("hidden")) {
     closeModal();
   }
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const titleTask = (document.getElementById("titleInput") as HTMLInputElement)
+    .value;
+  console.log(titleTask);
+  const categoryTask = (
+    document.getElementById("categorySelect") as HTMLSelectElement
+  ).value;
+  console.log(categoryTask);
+  const descriptionTask = (
+    document.getElementById("descriptionText") as HTMLTextAreaElement
+  ).value;
+  console.log(descriptionTask);
+  const deadlineTask = (
+    document.getElementById("deadlineTime") as HTMLInputElement
+  ).value;
+  console.log(deadlineTask);
 });
