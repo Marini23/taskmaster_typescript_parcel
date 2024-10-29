@@ -1,19 +1,18 @@
-import { Notyf } from "notyf";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-const notyf = new Notyf();
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+import { nanoid } from "nanoid";
 
 enum Category {
-  Work,
-  Health,
-  Finance,
-  Family,
-  Friends,
-  Home,
-  Shopping,
-  Travel,
-  Learning,
-  Miscellaneous,
+  Work = "work",
+  Health = "health",
+  Finance = "finance",
+  Family = "family",
+  Friends = "friends",
+  Home = "home",
+  Shopping = "shopping",
+  Travel = "travel",
+  Learning = "learning",
+  Miscellaneous = "miscellaneous",
 }
 
 type Task = {
@@ -77,4 +76,29 @@ form.addEventListener("submit", (e) => {
     document.getElementById("deadlineTime") as HTMLInputElement
   ).value;
   console.log(deadlineTask);
+
+  if (
+    titleTask.trim() === "" ||
+    categoryTask.trim() === "" ||
+    deadlineTask === ""
+  ) {
+    Notify.failure("Please fill in all required fields.", {
+      position: "center-center",
+      timeout: 2000,
+    });
+  } else {
+    const newTask: Task = {
+      id: nanoid(),
+      title: titleTask,
+      category: categoryTask as Category,
+      isCompleted: false,
+      description: descriptionTask,
+      deadline: new Date(deadlineTask),
+    };
+    tasks.push(newTask);
+    console.log("Task added:", newTask);
+    console.log("Current tasks:", tasks);
+    form.reset();
+    closeModal();
+  }
 });
