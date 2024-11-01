@@ -24,7 +24,13 @@ type Task = {
   deadline: Date;
 };
 
-let tasks: Task[] = [];
+const localStorageKey: string = "taska-list";
+
+let tasksList: Task[] = JSON.parse(
+  localStorage.getItem(localStorageKey) || "[]"
+);
+
+console.log(tasksList);
 
 const modal = document.querySelector(".modal-content") as HTMLElement;
 const overlay = document.querySelector(".overlay") as HTMLDivElement;
@@ -95,9 +101,10 @@ form.addEventListener("submit", (e) => {
       description: descriptionTask,
       deadline: new Date(deadlineTask),
     };
-    tasks.push(newTask);
+    tasksList.push(newTask);
+    localStorage.setItem(localStorageKey, JSON.stringify(tasksList));
     console.log("Task added:", newTask);
-    console.log("Current tasks:", tasks);
+    console.log("Current tasks:", tasksList);
     form.reset();
     closeModal();
   }

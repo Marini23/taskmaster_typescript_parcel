@@ -21,7 +21,6 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "nanoid": "^5.0.8",
-    "notiflix": "^3.2.7",
-    "notyf": "^3.10.0"
+    "notiflix": "^3.2.7"
   }
 }
