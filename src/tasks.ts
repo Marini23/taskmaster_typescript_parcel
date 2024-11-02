@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { nanoid } from "nanoid";
+import sprite from "../src/images/symbol-defs.svg";
 
 enum Category {
   Work = "work",
@@ -42,6 +43,55 @@ const closeModalBtn = document.querySelector(
 ) as HTMLButtonElement;
 
 const form = document.querySelector("form") as HTMLFormElement;
+
+const tasks = document.querySelector(".tasks-list") as HTMLUListElement;
+
+const markupTasks = tasksList
+  .map((task) => {
+    const formattedDeadline = new Date(task.deadline).toLocaleDateString(
+      "en-GB",
+      {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      }
+    );
+
+    return `
+      <li class="task-item">
+        <svg width="32" height="32" class="${
+          task.isCompleted ? "icon-completed" : "icon-notCompleted"
+        }">
+          <use href="${sprite}#${
+      task.isCompleted ? "icon-check2-circle" : "icon-circle"
+    }"></use>
+        </svg>
+        <div class="wrap-content">
+          <div class="title-container">
+            <h2 class="title-task">${task.title}</h2>
+            <div class="icons-container">
+              <button type="button" class="icon-btn">
+                <svg width="30" height="30" class="svg-icon">
+                  <use href="${sprite}#icon-pencil-fill"></use>
+                </svg>
+              </button>
+              <button type="button" class="icon-btn">
+                <svg width="30" height="30" class="svg-icon">
+                  <use href="${sprite}#icon-trash-fill"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <p class="category-task">${task.category}</p>
+          <p class="description-task">${task.description}</p>
+          <p class="dedline-data-task">${formattedDeadline}</p>
+        </div>
+      </li>
+    `;
+  })
+  .join("");
+
+tasks.insertAdjacentHTML("beforeend", markupTasks);
 
 const openModal = function (): void {
   modal.classList.remove("hidden");
