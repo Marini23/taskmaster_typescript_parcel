@@ -21,7 +21,7 @@ type Task = {
   title: string;
   category: Category;
   isCompleted: boolean;
-  description: string;
+  description?: string;
   deadline: Date;
 };
 
@@ -83,7 +83,11 @@ const markupTasks = tasksList
             </div>
           </div>
           <p class="category-task">${task.category}</p>
-          <p class="description-task">${task.description}</p>
+          ${
+            task.description
+              ? `<p class="description-task">${task.description}</p>`
+              : ""
+          }
           <p class="dedline-data-task">${formattedDeadline}</p>
         </div>
       </li>
@@ -148,9 +152,13 @@ form.addEventListener("submit", (e) => {
       title: titleTask,
       category: categoryTask as Category,
       isCompleted: false,
-      description: descriptionTask,
       deadline: new Date(deadlineTask),
     };
+
+    if (descriptionTask.trim() !== "") {
+      newTask.description = descriptionTask;
+    }
+
     tasksList.push(newTask);
     localStorage.setItem(localStorageKey, JSON.stringify(tasksList));
     console.log("Task added:", newTask);
