@@ -27,11 +27,7 @@ type Task = {
 
 const localStorageKey: string = "taska-list";
 
-let tasksList: Task[] = JSON.parse(
-  localStorage.getItem(localStorageKey) || "[]"
-);
-
-console.log(tasksList);
+let tasksList: Task[] = [];
 
 const modal = document.querySelector(".modal-content") as HTMLElement;
 const overlay = document.querySelector(".overlay") as HTMLDivElement;
@@ -44,27 +40,36 @@ const closeModalBtn = document.querySelector(
 
 const form = document.querySelector("form") as HTMLFormElement;
 
+const deleteBtn = document.querySelector("delete-btn") as HTMLButtonElement;
+
 const tasks = document.querySelector(".tasks-list") as HTMLUListElement;
 
-const markupTasks = tasksList
-  .map((task) => {
-    const formattedDeadline = new Date(task.deadline).toLocaleDateString(
-      "en-GB",
-      {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-      }
-    );
+function loadTasks(): void {
+  const storedTasks = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
+  tasksList = storedTasks;
+  renderTasks();
+}
 
-    return `
+function renderTasks(): void {
+  const markupTasks = tasksList
+    .map((task) => {
+      const formattedDeadline = new Date(task.deadline).toLocaleDateString(
+        "en-GB",
+        {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        }
+      );
+
+      return `
       <li class="task-item">
         <svg width="32" height="32" class="${
           task.isCompleted ? "icon-completed" : "icon-notCompleted"
         }">
           <use href="${sprite}#${
-      task.isCompleted ? "icon-check2-circle" : "icon-circle"
-    }"></use>
+        task.isCompleted ? "icon-check2-circle" : "icon-circle"
+      }"></use>
         </svg>
         <div class="wrap-content">
           <div class="title-container">
@@ -75,7 +80,7 @@ const markupTasks = tasksList
                   <use href="${sprite}#icon-pencil-fill"></use>
                 </svg>
               </button>
-              <button type="button" class="icon-btn">
+              <button type="button" class="icon-btn delete-btn">
                 <svg width="30" height="30" class="svg-icon">
                   <use href="${sprite}#icon-trash-fill"></use>
                 </svg>
@@ -92,10 +97,11 @@ const markupTasks = tasksList
         </div>
       </li>
     `;
-  })
-  .join("");
+    })
+    .join("");
 
-tasks.insertAdjacentHTML("beforeend", markupTasks);
+  tasks.innerHTML = markupTasks;
+}
 
 const openModal = function (): void {
   modal.classList.remove("hidden");
@@ -119,23 +125,21 @@ document.addEventListener("keydown", function (e): void {
   }
 });
 
+// Add new task
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const titleTask = (document.getElementById("titleInput") as HTMLInputElement)
     .value;
-  console.log(titleTask);
   const categoryTask = (
     document.getElementById("categorySelect") as HTMLSelectElement
   ).value;
-  console.log(categoryTask);
   const descriptionTask = (
     document.getElementById("descriptionText") as HTMLTextAreaElement
   ).value;
-  console.log(descriptionTask);
   const deadlineTask = (
     document.getElementById("deadlineTime") as HTMLInputElement
   ).value;
-  console.log(deadlineTask);
 
   if (
     titleTask.trim() === "" ||
@@ -161,9 +165,12 @@ form.addEventListener("submit", (e) => {
 
     tasksList.push(newTask);
     localStorage.setItem(localStorageKey, JSON.stringify(tasksList));
-    console.log("Task added:", newTask);
-    console.log("Current tasks:", tasksList);
+    renderTasks();
     form.reset();
     closeModal();
   }
 });
+
+// Delete task
+
+loadTasks();
