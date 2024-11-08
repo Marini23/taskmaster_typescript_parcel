@@ -40,8 +40,6 @@ const closeModalBtn = document.querySelector(
 
 const form = document.querySelector("form") as HTMLFormElement;
 
-const deleteBtn = document.querySelector("delete-btn") as HTMLButtonElement;
-
 const tasks = document.querySelector(".tasks-list") as HTMLUListElement;
 
 function loadTasks(): void {
@@ -63,7 +61,7 @@ function renderTasks(): void {
       );
 
       return `
-      <li class="task-item">
+      <li class="task-item" data-id="${task.id}">
         <svg width="32" height="32" class="${
           task.isCompleted ? "icon-completed" : "icon-notCompleted"
         }">
@@ -148,7 +146,7 @@ form.addEventListener("submit", (e) => {
   ) {
     Notify.failure("Please fill in all required fields.", {
       position: "center-center",
-      timeout: 2000,
+      timeout: 1000,
     });
   } else {
     const newTask: Task = {
@@ -168,9 +166,35 @@ form.addEventListener("submit", (e) => {
     renderTasks();
     form.reset();
     closeModal();
+    Notify.success("Task added successfully!", {
+      position: "center-center",
+      timeout: 1000,
+    });
   }
 });
 
 // Delete task
+function deleteTask(taskId: string): void {
+  tasksList = tasksList.filter((task) => task.id !== taskId);
+  localStorage.setItem(localStorageKey, JSON.stringify(tasksList));
+  renderTasks();
+}
+
+tasks.addEventListener("click", (e) => {
+  const target = e.target as HTMLElement;
+  if (target.closest(".delete-btn")) {
+    const taskItem = target.closest(".task-item") as HTMLLIElement;
+    const taskId = taskItem.dataset.id;
+    if (taskId) {
+      deleteTask(taskId);
+      Notify.info("Task deleted successfully!", {
+        position: "center-center",
+        timeout: 1000,
+      });
+    }
+  }
+});
+
+// First loading page
 
 loadTasks();
