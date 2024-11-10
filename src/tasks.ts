@@ -62,16 +62,18 @@ function renderTasks(): void {
 
       return `
       <li class="task-item" data-id="${task.id}">
-        <svg width="32" height="32" class="${
-          task.isCompleted ? "icon-completed" : "icon-notCompleted"
-        }">
-          <use href="${sprite}#${
+      <svg width="32" height="32" class="${
+        task.isCompleted ? "icon-completed" : "icon-notCompleted"
+      } toggle-complete">
+      <use href="${sprite}#${
         task.isCompleted ? "icon-check2-circle" : "icon-circle"
-      }"></use>
-        </svg>
+      }" class="done-icon"></use>
+    </svg>
         <div class="wrap-content">
           <div class="title-container">
-            <h2 class="title-task">${task.title}</h2>
+            <h2 class="${
+              task.isCompleted ? "title-task-completed" : "title-task"
+            }">${task.title}</h2>
             <div class="icons-container">
               <button type="button" class="icon-btn">
                 <svg width="30" height="30" class="svg-icon">
@@ -88,7 +90,11 @@ function renderTasks(): void {
           <p class="category-task">${task.category}</p>
           ${
             task.description
-              ? `<p class="description-task">${task.description}</p>`
+              ? `<p class="${
+                  task.isCompleted
+                    ? "description-task-completed"
+                    : "description-task"
+                }">${task.description}</p>`
               : ""
           }
           <p class="dedline-data-task">${formattedDeadline}</p>
@@ -180,14 +186,41 @@ function deleteTask(taskId: string): void {
   renderTasks();
 }
 
-tasks.addEventListener("click", (e) => {
+// Edit tasks state "isCompleted"
+
+function toggleTaskCompletion(taskId: string): void {
+  tasksList = tasksList.map((task) =>
+    task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task
+  );
+  localStorage.setItem(localStorageKey, JSON.stringify(tasksList));
+  renderTasks();
+}
+
+tasks.addEventListener("click", (e): void => {
   const target = e.target as HTMLElement;
+
+  // Check for delete button
   if (target.closest(".delete-btn")) {
     const taskItem = target.closest(".task-item") as HTMLLIElement;
     const taskId = taskItem.dataset.id;
     if (taskId) {
       deleteTask(taskId);
       Notify.info("Task deleted successfully!", {
+        position: "center-center",
+        timeout: 1000,
+      });
+    }
+  }
+
+  const toggleCompleteElement = target.closest(".toggle-complete");
+  if (toggleCompleteElement) {
+    const taskItem = toggleCompleteElement.closest(
+      ".task-item"
+    ) as HTMLLIElement;
+    const taskId = taskItem?.dataset.id;
+    if (taskId) {
+      toggleTaskCompletion(taskId);
+      Notify.success("Task completion status updated!", {
         position: "center-center",
         timeout: 1000,
       });

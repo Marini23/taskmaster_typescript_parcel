@@ -196,6 +196,22 @@
   }
 }
 
+.icon-completed {
+  cursor: pointer;
+  margin-top: 14px;
+  &:hover {
+    fill: var(--active-color);
+  }
+  &:active {
+    fill: var(--active-color);
+  }
+}
+
+.done-icon {
+  width: 32px;
+  height: 32px;
+}
+
 .wrap-content {
   width: 100%;
 }
