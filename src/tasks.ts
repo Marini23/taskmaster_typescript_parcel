@@ -42,6 +42,25 @@ const form = document.querySelector("form") as HTMLFormElement;
 
 const tasks = document.querySelector(".tasks-list") as HTMLUListElement;
 
+const editModal = document.querySelector(".modal-edit") as HTMLElement;
+const editOverlay = document.querySelector(".overlay-edit") as HTMLDivElement;
+const editForm = document.getElementById("editForm") as HTMLFormElement;
+const editTitleInput = document.getElementById(
+  "editTitleInput"
+) as HTMLInputElement;
+const editCategorySelect = document.getElementById(
+  "editCategorySelect"
+) as HTMLSelectElement;
+const editDescriptionText = document.getElementById(
+  "editDescriptionText"
+) as HTMLTextAreaElement;
+const editDeadlineTime = document.getElementById(
+  "editDeadlineTime"
+) as HTMLInputElement;
+const closeEditModalBtn = document.querySelector(
+  ".btn-modal-close-edit"
+) as HTMLButtonElement;
+
 function loadTasks(): void {
   const storedTasks = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
   tasksList = storedTasks;
@@ -75,7 +94,7 @@ function renderTasks(): void {
               task.isCompleted ? "title-task-completed" : "title-task"
             }">${task.title}</h2>
             <div class="icons-container">
-              <button type="button" class="icon-btn">
+              <button type="button" class="icon-btn edit-btn">
                 <svg width="30" height="30" class="svg-icon">
                   <use href="${sprite}#icon-pencil-fill"></use>
                 </svg>
@@ -225,6 +244,67 @@ tasks.addEventListener("click", (e): void => {
         timeout: 1000,
       });
     }
+  }
+
+  if (target.closest(".edit-btn")) {
+    const taskItem = target.closest(".task-item") as HTMLLIElement;
+    const taskId = taskItem.dataset.id;
+    const taskToEdit = tasksList.find((task) => task.id === taskId);
+    if (taskToEdit) openEditModal(taskToEdit);
+  }
+});
+
+// Edit task
+
+function openEditModal(task: Task): void {
+  editModal.classList.remove("hidden");
+  editOverlay.classList.remove("hidden");
+  editTitleInput.value = task.title;
+  editCategorySelect.value = task.category;
+  editDescriptionText.value = task.description || "";
+  editDeadlineTime.value = task.deadline.toISOString().split("T")[0];
+  editForm.dataset.taskId = task.id;
+}
+
+// openModalBtn.addEventListener("click", openModal);
+
+const closeEditModal = function (): void {
+  editModal.classList.add("hidden");
+  editOverlay.classList.add("hidden");
+};
+
+closeEditModalBtn.addEventListener("click", closeEditModal);
+
+editOverlay.addEventListener("click", closeEditModal);
+
+document.addEventListener("keydown", function (e): void {
+  if (e.key === "Escape" && !editModal.classList.contains("hidden")) {
+    closeEditModal();
+  }
+});
+
+editForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const taskId = editForm.dataset.taskId;
+  const editedTaskIndex = tasksList.findIndex((task) => task.id === taskId);
+
+  if (editedTaskIndex !== -1) {
+    tasksList[editedTaskIndex] = {
+      ...tasksList[editedTaskIndex],
+      title: editTitleInput.value,
+      category: editCategorySelect.value as Category,
+      description: editDescriptionText.value,
+      deadline: new Date(editDeadlineTime.value),
+    };
+
+    localStorage.setItem(localStorageKey, JSON.stringify(tasksList));
+    renderTasks();
+    Notify.success("Task updated successfully!", {
+      position: "center-center",
+      timeout: 1000,
+    });
+    editModal.classList.add("hidden");
+    editOverlay.classList.add("hidden");
   }
 });
 

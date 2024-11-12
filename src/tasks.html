@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TaskMaster</title>
     <link rel="stylesheet" href="./common.css" />
     <link rel="stylesheet" href="./tasks.css" />
@@ -38,7 +38,7 @@
         </ul>
       </nav>
       <button type="button" class="add-task-button btn-modal-open">Add task</button>
-          <!-- Modal -->
+<!-- Modal add task -->
 <section class="modal-content hidden"  >
     <div class="modal-title-container">                        
         <h3>Add task</h3>
@@ -121,6 +121,55 @@
         <ul class="tasks-list">
         </ul>
       </section>
+<!-- Modal edit task -->
+<section class="modal-content modal-edit hidden"  >
+    <div class="modal-title-container">                        
+        <h3>Edit task</h3>
+ <button type="button" class="btn-close btn-modal-close-edit"  aria-label="Close"></button>
+            </div>
+<form  novalidate id="editForm">
+  <div class="mb-3">
+    <label for="titleInput" class="form-label">Title*</label>
+    <input type="text" class="form-control" id="editTitleInput" required />
+    <div class="invalid-feedback">
+      Please create a title.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="categorySelect" class="form-label">Category*</label>
+    <select class="form-select modal-select" aria-label="Select categories" id="editCategorySelect" required>
+      <option value="" selected></option>
+      <option value="personal">Personal</option>
+  <option value="Work">Work</option>
+  <option value="Health">Health</option>
+  <option value="Finance">Finance</option>
+  <option value="Family">Family</option>
+  <option value="Friends">Friends</option>
+  <option value="Home">Home</option>
+  <option value="Shopping">Shopping</option>
+  <option value="Travel">Travel</option>
+  <option value="Learning">Learning</option>
+  <option value="Miscellaneous">Miscellaneous</option>
+    </select>
+    <div class="invalid-feedback">
+      Please choose a category.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="descriptionText" class="form-label">Description (optional)</label>
+    <textarea type="text" class="form-control" id="editDescriptionText" />
+  </div>
+    <div class="mb-3">
+    <label for="deadlineTime" class="form-label">Deadline</label>
+    <input type="datetime-local" class="form-control" id="EditDeadlineTime" required />
+    <div class="invalid-feedback">
+      Please choose deadline time.
+    </div>
+  </div>
+  <button class="btn btn-primary btn-submit-modal" type="submit">Save Changes</button>
+</form>
+</section>
+<div class="overlay overlay-edit hidden"></div>
     </main>
      <footer class="footer-container">
        <p> &copy; 2024 TaskMaster. All Rights Reserved.</p>
