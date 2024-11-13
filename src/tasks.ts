@@ -16,6 +16,8 @@ enum Category {
   Miscellaneous = "miscellaneous",
 }
 
+type FilterStateIsCompleted = "all" | "active" | "completed";
+
 type Task = {
   id: string;
   title: string;
@@ -37,6 +39,9 @@ const openModalBtn = document.querySelector(
 const closeModalBtn = document.querySelector(
   ".btn-modal-close"
 ) as HTMLButtonElement;
+
+const filtereBtnIsCompleted: NodeListOf<HTMLButtonElement> =
+  document.querySelectorAll(".btn-isCompleted");
 
 const form = document.querySelector("form") as HTMLFormElement;
 
@@ -63,12 +68,15 @@ const closeEditModalBtn = document.querySelector(
 
 function loadTasks(): void {
   const storedTasks = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
-  tasksList = storedTasks;
+  tasksList = storedTasks.map((task: Task) => ({
+    ...task,
+    deadline: new Date(task.deadline),
+  }));
   renderTasks();
 }
 
-function renderTasks(): void {
-  const markupTasks = tasksList
+function renderTasks(filteredTasks: Task[] = tasksList): void {
+  const markupTasks = filteredTasks
     .map((task) => {
       const formattedDeadline = new Date(task.deadline).toLocaleDateString(
         "en-GB",
@@ -163,6 +171,8 @@ form.addEventListener("submit", (e) => {
   const deadlineTask = (
     document.getElementById("deadlineTime") as HTMLInputElement
   ).value;
+
+  console.log(deadlineTask);
 
   if (
     titleTask.trim() === "" ||
@@ -262,11 +272,9 @@ function openEditModal(task: Task): void {
   editTitleInput.value = task.title;
   editCategorySelect.value = task.category;
   editDescriptionText.value = task.description || "";
-  editDeadlineTime.value = task.deadline.toISOString().split("T")[0];
+  editDeadlineTime.value = task.deadline.toISOString().slice(0, 16);
   editForm.dataset.taskId = task.id;
 }
-
-// openModalBtn.addEventListener("click", openModal);
 
 const closeEditModal = function (): void {
   editModal.classList.add("hidden");
@@ -311,3 +319,34 @@ editForm.addEventListener("submit", (e) => {
 // First loading page
 
 loadTasks();
+
+// Filtered Tasks
+
+function filterTasks(filter: FilterStateIsCompleted): void {
+  let filteredTasks: Task[] = [];
+
+  if (filter === "active") {
+    filteredTasks = tasksList.filter((task) => !task.isCompleted);
+  } else if (filter === "completed") {
+    filteredTasks = tasksList.filter((task) => task.isCompleted);
+  } else {
+    filteredTasks = tasksList;
+  }
+
+  renderTasks(filteredTasks);
+}
+
+filtereBtnIsCompleted.forEach((button) => {
+  button.addEventListener("click", function () {
+    // Remove 'active' class from all buttons
+    filtereBtnIsCompleted.forEach((btn) => {
+      btn.classList.remove("active-filter");
+    });
+
+    // Add 'active' class to the clicked button
+    this.classList.add("active-filter");
+
+    const filter = this.getAttribute("data-filter") as FilterStateIsCompleted;
+    filterTasks(filter);
+  });
+});

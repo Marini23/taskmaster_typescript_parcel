@@ -107,9 +107,9 @@
   <option value="Miscellaneous">Miscellaneous</option>
 </select>
     <div class="wrap-filter-isCompleted">
-    <button type="button" class="btn-isCompleted">All</button>
-    <button type="button" class="btn-isCompleted">Active</button>
-    <button type="button" class="btn-isCompleted">Completed</button>
+    <button type="button" class="btn-isCompleted active-filter" data-filter="all">All</button>
+    <button type="button" class="btn-isCompleted" data-filter="active">Active</button>
+    <button type="button" class="btn-isCompleted" data-filter="completed">Completed</button>
   </div>
   </div>
       <div aria-label="Current date" class="wrap-data">
@@ -161,7 +161,7 @@
   </div>
     <div class="mb-3">
     <label for="deadlineTime" class="form-label">Deadline</label>
-    <input type="datetime-local" class="form-control" id="EditDeadlineTime" required />
+    <input type="datetime-local" class="form-control" id="editDeadlineTime" required />
     <div class="invalid-feedback">
       Please choose deadline time.
     </div>
