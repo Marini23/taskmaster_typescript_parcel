@@ -43,6 +43,10 @@ const closeModalBtn = document.querySelector(
 const filtereBtnIsCompleted: NodeListOf<HTMLButtonElement> =
   document.querySelectorAll(".btn-isCompleted");
 
+const categoryFilter = document.getElementById(
+  "categoryFilter"
+) as HTMLSelectElement;
+
 const form = document.querySelector("form") as HTMLFormElement;
 
 const tasks = document.querySelector(".tasks-list") as HTMLUListElement;
@@ -172,8 +176,6 @@ form.addEventListener("submit", (e) => {
     document.getElementById("deadlineTime") as HTMLInputElement
   ).value;
 
-  console.log(deadlineTask);
-
   if (
     titleTask.trim() === "" ||
     categoryTask.trim() === "" ||
@@ -186,7 +188,7 @@ form.addEventListener("submit", (e) => {
   } else {
     const newTask: Task = {
       id: nanoid(),
-      title: titleTask,
+      title: titleTask.charAt(0).toUpperCase() + titleTask.slice(1),
       category: categoryTask as Category,
       isCompleted: false,
       deadline: new Date(deadlineTask),
@@ -320,33 +322,47 @@ editForm.addEventListener("submit", (e) => {
 
 loadTasks();
 
-// Filtered Tasks
+// Filter tasks
 
-function filterTasks(filter: FilterStateIsCompleted): void {
-  let filteredTasks: Task[] = [];
+let currentCategoryFilter: Category | "all" = "all";
+let currentIsCompletedFilter: FilterStateIsCompleted = "all";
 
-  if (filter === "active") {
-    filteredTasks = tasksList.filter((task) => !task.isCompleted);
-  } else if (filter === "completed") {
-    filteredTasks = tasksList.filter((task) => task.isCompleted);
-  } else {
-    filteredTasks = tasksList;
+function applyFilters(): void {
+  let filteredTasks: Task[] = tasksList;
+  // Apply isCompleted filter
+  if (currentIsCompletedFilter === "active") {
+    filteredTasks = filteredTasks.filter((task) => !task.isCompleted);
+  } else if (currentIsCompletedFilter === "completed") {
+    filteredTasks = filteredTasks.filter((task) => task.isCompleted);
+  }
+
+  // Apply category filter
+  if (currentCategoryFilter !== "all") {
+    filteredTasks = filteredTasks.filter(
+      (task) => task.category === currentCategoryFilter
+    );
   }
 
   renderTasks(filteredTasks);
 }
 
+// Update the isCompleted filter
 filtereBtnIsCompleted.forEach((button) => {
   button.addEventListener("click", function () {
-    // Remove 'active' class from all buttons
-    filtereBtnIsCompleted.forEach((btn) => {
-      btn.classList.remove("active-filter");
-    });
-
-    // Add 'active' class to the clicked button
+    filtereBtnIsCompleted.forEach((btn) =>
+      btn.classList.remove("active-filter")
+    );
     this.classList.add("active-filter");
 
-    const filter = this.getAttribute("data-filter") as FilterStateIsCompleted;
-    filterTasks(filter);
+    currentIsCompletedFilter = this.getAttribute(
+      "data-filter"
+    ) as FilterStateIsCompleted;
+    applyFilters();
   });
+});
+
+// Update the category filter
+categoryFilter.addEventListener("change", (): void => {
+  currentCategoryFilter = categoryFilter.value as Category | "all";
+  applyFilters();
 });
