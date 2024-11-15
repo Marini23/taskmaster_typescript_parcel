@@ -31,6 +31,7 @@ const localStorageKey: string = "taska-list";
 
 let tasksList: Task[] = [];
 
+const today = document.querySelector(".wrap-data") as HTMLDivElement;
 const modal = document.querySelector(".modal-content") as HTMLElement;
 const overlay = document.querySelector(".overlay") as HTMLDivElement;
 const openModalBtn = document.querySelector(
@@ -366,3 +367,13 @@ categoryFilter.addEventListener("change", (): void => {
   currentCategoryFilter = categoryFilter.value as Category | "all";
   applyFilters();
 });
+
+// Get current date
+
+const currentDate = new Date();
+const currentDay = currentDate.getDate().toString().padStart(2, "0");
+const currentMonth = currentDate.toLocaleString("en-US", { month: "long" });
+const currentYear = currentDate.getFullYear();
+
+today.innerHTML = ` <p class="data-day">${currentDay}</p>
+        <p class="data-month">${currentMonth} <span class="data-year">${currentYear}</span></p>`;

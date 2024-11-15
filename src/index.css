@@ -8,16 +8,6 @@
   background-color: var(--dark-color);
 }
 
-.header-container {
-  width: 1440px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 36px;
-  margin: 0 auto;
-}
-
 .logo-container {
   display: flex;
   align-items: center;
@@ -62,13 +52,6 @@
   color: var(--active-color);
 }
 
-@media (min-width: 1400px) {
-  .navbar-expand-xxl .navbar-nav .nav-link {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-}
-
 .add-task-button {
   width: 178px;
   height: 78px;
@@ -84,4 +67,55 @@
 
 .add-task-button:hover {
   background-color: var(--active-color);
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-toggler {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.container-fluid {
+  width: 100%;
+  height: 104px;
+  min-width: 0320px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+.navbar {
+  height: 120px;
+  flex-wrap: nowrap;
+}
+.navbar-nav {
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .logo-text {
+    display: none;
+  }
+  .header {
+    padding: 0 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .add-task-button {
+    margin-left: 170px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar-expand-xl .navbar-nav .nav-link {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .add-task-button {
+    margin-left: 270px;
+  }
 }

@@ -9,171 +9,236 @@
     <link rel="stylesheet" href="./tasks.css" />
   </head>
   <body>
-        <header class="header">
+    <header class="header">
       <div class="header-container">
-      <a href="index.html" aria-label="TaskMaster Home" class="logo-container">
-        <img
-          class="logo-image"
-          srcset="
-            ./images/logo_TaskMaster_1x.jpg 1x,
-            ./images/logo_TaskMaster_2x.jpg 2x
-          "
-          src="./images/logo_TaskMaster_1x.jpg"
-          alt="photo"
-          width="180"
-        />
-        <span class="logo-text">TaskMaster</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <a
+          href="index.html"
+          aria-label="TaskMaster Home"
+          class="logo-container"
+        >
+          <img
+            class="logo-image"
+            srcset="
+              ./images/logo_TaskMaster_1x.jpg 1x,
+              ./images/logo_TaskMaster_2x.jpg 2x
+            "
+            src="./images/logo_TaskMaster_1x.jpg"
+            alt="photo"
+            width="180"
+          />
+          <span class="logo-text">TaskMaster</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-      <nav class="navbar navbar-expand-xxl" >
+        <nav class="navbar navbar-expand-xxl">
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav" >
-        <a class="nav-link " href="index.html" >Home</a>
-          <a class="nav-link" href="tasks.html">Tasks</a>
-        <a class="nav-link" href="contacts.html">Contacts</a>
-      </div>
-    </div>
-        </ul>
-      </nav>
-      <button type="button" class="add-task-button btn-modal-open">Add task</button>
-<!-- Modal add task -->
-<section class="modal-content hidden"  >
-    <div class="modal-title-container">                        
-        <h3>Add task</h3>
- <button type="button" class="btn-close btn-modal-close"  aria-label="Close"></button>
+            <div class="navbar-nav">
+              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="tasks.html">Tasks</a>
+              <a class="nav-link" href="contacts.html">Contacts</a>
             </div>
-<form class="needs-validation" novalidate>
-  <div class="mb-3">
-    <label for="titleInput" class="form-label">Title*</label>
-    <input type="text" class="form-control" id="titleInput" required />
-    <div class="invalid-feedback">
-      Please create a title.
-    </div>
-  </div>
-  <div class="mb-3">
-    <label for="categorySelect" class="form-label">Category*</label>
-    <select class="form-select modal-select" aria-label="Select categories" id="categorySelect" required>
-      <option value="" selected></option>
-      <option value="Personal">Personal</option>
-  <option value="Work">Work</option>
-  <option value="Health">Health</option>
-  <option value="Finance">Finance</option>
-  <option value="Family">Family</option>
-  <option value="Friends">Friends</option>
-  <option value="Home">Home</option>
-  <option value="Shopping">Shopping</option>
-  <option value="Travel">Travel</option>
-  <option value="Learning">Learning</option>
-  <option value="Miscellaneous">Miscellaneous</option>
-    </select>
-    <div class="invalid-feedback">
-      Please choose a category.
-    </div>
-  </div>
-  <div class="mb-3">
-    <label for="descriptionText" class="form-label">Description (optional)</label>
-    <textarea type="text" class="form-control" id="descriptionText" />
-  </div>
-    <div class="mb-3">
-    <label for="deadlineTime" class="form-label">Deadline</label>
-    <input type="datetime-local" class="form-control" id="deadlineTime" required />
-    <div class="invalid-feedback">
-      Please choose deadline time.
-    </div>
-  </div>
-  <button class="btn btn-primary btn-submit-modal" type="submit">Submit</button>
-</form>
-</section>
-<div class="overlay hidden"></div>
+          </div>
+        </nav>
+        <button type="button" class="add-task-button btn-modal-open">
+          Add task
+        </button>
+        <!-- Modal add task -->
+        <section class="modal-content hidden">
+          <div class="modal-title-container">
+            <h3>Add task</h3>
+            <button
+              type="button"
+              class="btn-close btn-modal-close"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="titleInput" class="form-label">Title*</label>
+              <input
+                type="text"
+                class="form-control"
+                id="titleInput"
+                required
+              />
+              <div class="invalid-feedback">Please create a title.</div>
+            </div>
+            <div class="mb-3">
+              <label for="categorySelect" class="form-label">Category*</label>
+              <select
+                class="form-select modal-select"
+                aria-label="Select categories"
+                id="categorySelect"
+                required
+              >
+                <option value="" selected></option>
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="Health">Health</option>
+                <option value="Finance">Finance</option>
+                <option value="Family">Family</option>
+                <option value="Friends">Friends</option>
+                <option value="Home">Home</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Travel">Travel</option>
+                <option value="Learning">Learning</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+              </select>
+              <div class="invalid-feedback">Please choose a category.</div>
+            </div>
+            <div class="mb-3">
+              <label for="descriptionText" class="form-label"
+                >Description (optional)</label
+              >
+              <textarea type="text" class="form-control" id="descriptionText" />
+            </div>
+            <div class="mb-3">
+              <label for="deadlineTime" class="form-label">Deadline</label>
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="deadlineTime"
+                required
+              />
+              <div class="invalid-feedback">Please choose deadline time.</div>
+            </div>
+            <button class="btn btn-primary btn-submit-modal" type="submit">
+              Submit
+            </button>
+          </form>
+        </section>
+        <div class="overlay hidden"></div>
       </div>
     </header>
     <main class="main-container">
-    <section class="section-filters-container" aria-label="Filters">
-    <div class="filters-wrap">
-    <select id="categoryFilter" class="form-select" aria-label="Select categories">
-  <option value="all" >All categories</option>
-  <option value="Personal">Personal</option>
-  <option value="Work">Work</option>
-  <option value="Health">Health</option>
-  <option value="Finance">Finance</option>
-  <option value="Family">Family</option>
-  <option value="Friends">Friends</option>
-  <option value="Home">Home</option>
-  <option value="Shopping">Shopping</option>
-  <option value="Travel">Travel</option>
-  <option value="Learning">Learning</option>
-  <option value="Miscellaneous">Miscellaneous</option>
-</select>
-    <div class="wrap-filter-isCompleted">
-    <button type="button" class="btn-isCompleted active-filter" data-filter="all">All</button>
-    <button type="button" class="btn-isCompleted" data-filter="active">Active</button>
-    <button type="button" class="btn-isCompleted" data-filter="completed">Completed</button>
-  </div>
-  </div>
-      <div aria-label="Current date" class="wrap-data">
-        <p class="data-day">16</p>
-        <p class="data-month">September <span class="data-year">2024</span></p>
-      </div>
-    </section>
-      <section aria-label="Task List">
-        <ul class="tasks-list">
-        </ul>
+      <section class="section-filters-container" aria-label="Filters">
+        <div class="filters-wrap">
+          <select
+            id="categoryFilter"
+            class="form-select"
+            aria-label="Select categories"
+          >
+            <option value="all">All categories</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="Health">Health</option>
+            <option value="Finance">Finance</option>
+            <option value="Family">Family</option>
+            <option value="Friends">Friends</option>
+            <option value="Home">Home</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Travel">Travel</option>
+            <option value="Learning">Learning</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+          </select>
+          <div class="wrap-filter-isCompleted">
+            <button
+              type="button"
+              class="btn-isCompleted active-filter"
+              data-filter="all"
+            >
+              All
+            </button>
+            <button type="button" class="btn-isCompleted" data-filter="active">
+              Active
+            </button>
+            <button
+              type="button"
+              class="btn-isCompleted"
+              data-filter="completed"
+            >
+              Completed
+            </button>
+          </div>
+        </div>
+        <div aria-label="Current date" class="wrap-data"></div>
       </section>
-<!-- Modal edit task -->
-<section class="modal-content modal-edit hidden"  >
-    <div class="modal-title-container">                        
-        <h3>Edit task</h3>
- <button type="button" class="btn-close btn-modal-close-edit"  aria-label="Close"></button>
-            </div>
-<form  novalidate id="editForm">
-  <div class="mb-3">
-    <label for="titleInput" class="form-label">Title*</label>
-    <input type="text" class="form-control" id="editTitleInput" required />
-    <div class="invalid-feedback">
-      Please create a title.
-    </div>
-  </div>
-  <div class="mb-3">
-    <label for="categorySelect" class="form-label">Category*</label>
-    <select class="form-select modal-select" aria-label="Select categories" id="editCategorySelect" required>
-      <option value="" selected></option>
-      <option value="personal">Personal</option>
-  <option value="Work">Work</option>
-  <option value="Health">Health</option>
-  <option value="Finance">Finance</option>
-  <option value="Family">Family</option>
-  <option value="Friends">Friends</option>
-  <option value="Home">Home</option>
-  <option value="Shopping">Shopping</option>
-  <option value="Travel">Travel</option>
-  <option value="Learning">Learning</option>
-  <option value="Miscellaneous">Miscellaneous</option>
-    </select>
-    <div class="invalid-feedback">
-      Please choose a category.
-    </div>
-  </div>
-  <div class="mb-3">
-    <label for="descriptionText" class="form-label">Description (optional)</label>
-    <textarea type="text" class="form-control" id="editDescriptionText" />
-  </div>
-    <div class="mb-3">
-    <label for="deadlineTime" class="form-label">Deadline</label>
-    <input type="datetime-local" class="form-control" id="editDeadlineTime" required />
-    <div class="invalid-feedback">
-      Please choose deadline time.
-    </div>
-  </div>
-  <button class="btn btn-primary btn-submit-modal" type="submit">Save Changes</button>
-</form>
-</section>
-<div class="overlay overlay-edit hidden"></div>
+      <section aria-label="Task List">
+        <ul class="tasks-list"></ul>
+      </section>
+      <!-- Modal edit task -->
+      <section class="modal-content modal-edit hidden">
+        <div class="modal-title-container">
+          <h3>Edit task</h3>
+          <button
+            type="button"
+            class="btn-close btn-modal-close-edit"
+            aria-label="Close"
+          ></button>
+        </div>
+        <form novalidate id="editForm">
+          <div class="mb-3">
+            <label for="titleInput" class="form-label">Title*</label>
+            <input
+              type="text"
+              class="form-control"
+              id="editTitleInput"
+              required
+            />
+            <div class="invalid-feedback">Please create a title.</div>
+          </div>
+          <div class="mb-3">
+            <label for="categorySelect" class="form-label">Category*</label>
+            <select
+              class="form-select modal-select"
+              aria-label="Select categories"
+              id="editCategorySelect"
+              required
+            >
+              <option value="" selected></option>
+              <option value="personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="Health">Health</option>
+              <option value="Finance">Finance</option>
+              <option value="Family">Family</option>
+              <option value="Friends">Friends</option>
+              <option value="Home">Home</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Travel">Travel</option>
+              <option value="Learning">Learning</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <div class="invalid-feedback">Please choose a category.</div>
+          </div>
+          <div class="mb-3">
+            <label for="descriptionText" class="form-label"
+              >Description (optional)</label
+            >
+            <textarea
+              type="text"
+              class="form-control"
+              id="editDescriptionText"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="deadlineTime" class="form-label">Deadline</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="editDeadlineTime"
+              required
+            />
+            <div class="invalid-feedback">Please choose deadline time.</div>
+          </div>
+          <button class="btn btn-primary btn-submit-modal" type="submit">
+            Save Changes
+          </button>
+        </form>
+      </section>
+      <div class="overlay overlay-edit hidden"></div>
     </main>
-     <footer class="footer-container">
-       <p> &copy; 2024 TaskMaster. All Rights Reserved.</p>
-        <p >Manage your tasks efficiently and achieve more with TaskMaster.</p>
+    <footer class="footer-container">
+      <p>&copy; 2024 TaskMaster. All Rights Reserved.</p>
+      <p>Manage your tasks efficiently and achieve more with TaskMaster.</p>
     </footer>
     <script src="../dist/tasks.js" type="module"></script>
   </body>
