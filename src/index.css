@@ -186,3 +186,62 @@
     margin-left: 270px;
   }
 }
+
+/* Modal add task */
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  min-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 560px;
+  height: 600px;
+  background: var(--light-color);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-primary {
+  width: 160px;
+  height: 40px;
+  margin-top: 16px;
+  background-color: var(--purple-color);
+  border: none;
+  color: var(--dark-color);
+  font-size: 18px;
+  font-weight: 500;
+  &:hover {
+    background-color: var(--active-color);
+    color: var(--dark-color);
+  }
+  &:active {
+    background-color: var(--active-color);
+    color: var(--dark-color);
+  }
+}

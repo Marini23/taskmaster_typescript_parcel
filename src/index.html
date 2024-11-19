@@ -48,7 +48,9 @@
                 <a class="nav-link" href="tasks.html">Tasks</a>
                 <a class="nav-link" href="contacts.html">Contacts</a>
               </div>
-              <button type="button" class="add-task-button">Add task</button>
+              <button type="button" class="add-task-button btn-modal-open">
+                Add task
+              </button>
             </div>
           </div>
         </div>
@@ -65,6 +67,67 @@
           <li><a class="menu-item" href="contacts.html">Contacts</a></li>
         </ul>
       </div>
+      <!-- Modal add task -->
+      <section class="modal-content hidden">
+        <div class="modal-title-container">
+          <h3>Add task</h3>
+          <button
+            type="button"
+            class="btn-close btn-modal-close"
+            aria-label="Close"
+          ></button>
+        </div>
+        <form class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="titleInput" class="form-label">Title*</label>
+            <input type="text" class="form-control" id="titleInput" required />
+            <div class="invalid-feedback">Please create a title.</div>
+          </div>
+          <div class="mb-3">
+            <label for="categorySelect" class="form-label">Category*</label>
+            <select
+              class="form-select modal-select"
+              aria-label="Select categories"
+              id="categorySelect"
+              required
+            >
+              <option value="" selected></option>
+              <option value="Personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="Health">Health</option>
+              <option value="Finance">Finance</option>
+              <option value="Family">Family</option>
+              <option value="Friends">Friends</option>
+              <option value="Home">Home</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Travel">Travel</option>
+              <option value="Learning">Learning</option>
+              <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <div class="invalid-feedback">Please choose a category.</div>
+          </div>
+          <div class="mb-3">
+            <label for="descriptionText" class="form-label"
+              >Description (optional)</label
+            >
+            <textarea type="text" class="form-control" id="descriptionText" />
+          </div>
+          <div class="mb-3">
+            <label for="deadlineTime" class="form-label">Deadline</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="deadlineTime"
+              required
+            />
+            <div class="invalid-feedback">Please choose deadline time.</div>
+          </div>
+          <button class="btn btn-primary btn-submit-modal" type="submit">
+            Submit
+          </button>
+        </form>
+      </section>
+      <div class="overlay hidden"></div>
     </header>
     <script src="../dist/index.js" type="module"></script>
   </body>

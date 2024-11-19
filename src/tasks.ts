@@ -139,6 +139,8 @@ function renderTasks(filteredTasks: Task[] = tasksList): void {
   tasks.innerHTML = markupTasks;
 }
 
+// Modal add button
+
 const openModal = function (): void {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
