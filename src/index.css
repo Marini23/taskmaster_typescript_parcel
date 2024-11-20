@@ -162,31 +162,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .logo-text {
-    display: none;
-  }
-  .header {
-    padding: 0 12px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .add-task-button {
-    margin-left: 170px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .navbar-expand-xl .navbar-nav .nav-link {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-  .add-task-button {
-    margin-left: 270px;
-  }
-}
-
 /* Modal add task */
 
 .overlay {
@@ -243,5 +218,30 @@
   &:active {
     background-color: var(--active-color);
     color: var(--dark-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-text {
+    display: none;
+  }
+  .header {
+    padding: 0 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .add-task-button {
+    margin-left: 170px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar-expand-xl .navbar-nav .nav-link {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .add-task-button {
+    margin-left: 210px;
   }
 }

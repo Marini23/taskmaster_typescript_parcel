@@ -32,26 +32,29 @@ const localStorageKey: string = "taska-list";
 let tasksList: Task[] = [];
 
 const today = document.querySelector(".wrap-data") as HTMLDivElement;
+const menuOpen = document.querySelector(".navbar-toggler") as HTMLButtonElement;
+const menuClose = document.querySelector(
+  ".btn-menu-close"
+) as HTMLButtonElement;
+const menuList = document.querySelector(".menu-list") as HTMLUListElement;
 const modal = document.querySelector(".modal-content") as HTMLElement;
 const overlay = document.querySelector(".overlay") as HTMLDivElement;
 const openModalBtn = document.querySelector(
   ".btn-modal-open"
 ) as HTMLButtonElement;
+const openModalMobile = document.querySelector(
+  ".add-btn-mobile"
+) as HTMLButtonElement;
 const closeModalBtn = document.querySelector(
   ".btn-modal-close"
 ) as HTMLButtonElement;
-
+const form = document.querySelector("form") as HTMLFormElement;
+const tasks = document.querySelector(".tasks-list") as HTMLUListElement;
 const filtereBtnIsCompleted: NodeListOf<HTMLButtonElement> =
   document.querySelectorAll(".btn-isCompleted");
-
 const categoryFilter = document.getElementById(
   "categoryFilter"
 ) as HTMLSelectElement;
-
-const form = document.querySelector("form") as HTMLFormElement;
-
-const tasks = document.querySelector(".tasks-list") as HTMLUListElement;
-
 const editModal = document.querySelector(".modal-edit") as HTMLElement;
 const editOverlay = document.querySelector(".overlay-edit") as HTMLDivElement;
 const editForm = document.getElementById("editForm") as HTMLFormElement;
@@ -139,7 +142,16 @@ function renderTasks(filteredTasks: Task[] = tasksList): void {
   tasks.innerHTML = markupTasks;
 }
 
-// Modal add button
+// Burger list menu
+menuOpen.addEventListener("click", (): void => {
+  menuList.classList.toggle("active");
+});
+
+menuClose.addEventListener("click", (): void => {
+  menuList.classList.toggle("active");
+});
+
+// Modal add task
 
 const openModal = function (): void {
   modal.classList.remove("hidden");
@@ -147,6 +159,7 @@ const openModal = function (): void {
 };
 
 openModalBtn.addEventListener("click", openModal);
+openModalMobile.addEventListener("click", openModal);
 
 const closeModal = function (): void {
   modal.classList.add("hidden");
