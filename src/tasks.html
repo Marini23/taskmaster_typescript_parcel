@@ -6,129 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TaskMaster</title>
     <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./header.css" />
     <link rel="stylesheet" href="./tasks.css" />
   </head>
   <body>
-    <header class="header">
-      <nav class="navbar navbar-expand-xl">
-        <div class="container-fluid">
-          <a
-            class="navbar-brand logo-container"
-            href="index.html"
-            aria-label="TaskMaster Logo"
-          >
-            <img
-              srcset="
-                ./images/logo_TaskMaster_1x.jpg 1x,
-                ./images/logo_TaskMaster_2x.jpg 2x
-              "
-              src="./images/logo_TaskMaster_1x.jpg"
-              alt="logo"
-              width="180"
-              height="24"
-              class="d-inline-block align-text-top logo-image"
-            />
-            <span class="logo-text">TaskMaster</span>
-          </a>
-          <div>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-link" href="index.html">Home</a>
-                <a class="nav-link" href="tasks.html">Tasks</a>
-                <a class="nav-link" href="contacts.html">Contacts</a>
-              </div>
-              <button type="button" class="add-task-button btn-modal-open">
-                Add task
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div class="menu-list">
-        <button type="button" class="btn-menu-close" aria-label="Close">
-          <svg width="48" height="48" class="icon-close">
-            <use href="./images/symbol-defs.svg#icon-x"></use>
-          </svg>
-        </button>
-        <ul class="list-items">
-          <li><a class="menu-item" href="index.html">Home</a></li>
-          <li><a class="menu-item" href="tasks.html">Tasks</a></li>
-          <li><a class="menu-item" href="contacts.html">Contacts</a></li>
-        </ul>
-      </div>
-      <!-- Modal add task -->
-      <section class="modal-content hidden">
-        <div class="modal-title-container">
-          <h3>Add task</h3>
-          <button
-            type="button"
-            class="btn-close btn-modal-close"
-            aria-label="Close"
-          ></button>
-        </div>
-        <form class="needs-validation" novalidate>
-          <div class="mb-3">
-            <label for="titleInput" class="form-label">Title*</label>
-            <input type="text" class="form-control" id="titleInput" required />
-            <div class="invalid-feedback">Please create a title.</div>
-          </div>
-          <div class="mb-3">
-            <label for="categorySelect" class="form-label">Category*</label>
-            <select
-              class="form-select modal-select"
-              aria-label="Select categories"
-              id="categorySelect"
-              required
-            >
-              <option value="" selected></option>
-              <option value="Personal">Personal</option>
-              <option value="Work">Work</option>
-              <option value="Health">Health</option>
-              <option value="Finance">Finance</option>
-              <option value="Family">Family</option>
-              <option value="Friends">Friends</option>
-              <option value="Home">Home</option>
-              <option value="Shopping">Shopping</option>
-              <option value="Travel">Travel</option>
-              <option value="Learning">Learning</option>
-              <option value="Miscellaneous">Miscellaneous</option>
-            </select>
-            <div class="invalid-feedback">Please choose a category.</div>
-          </div>
-          <div class="mb-3">
-            <label for="descriptionText" class="form-label"
-              >Description (optional)</label
-            >
-            <textarea type="text" class="form-control" id="descriptionText" />
-          </div>
-          <div class="mb-3">
-            <label for="deadlineTime" class="form-label">Deadline</label>
-            <input
-              type="datetime-local"
-              class="form-control"
-              id="deadlineTime"
-              required
-            />
-            <div class="invalid-feedback">Please choose deadline time.</div>
-          </div>
-          <button class="btn btn-primary btn-submit-modal" type="submit">
-            Submit
-          </button>
-        </form>
-      </section>
-      <div class="overlay hidden"></div>
-    </header>
     <main class="main-container">
       <section class="section-filters-container" aria-label="Filters">
         <div class="data-container">
@@ -253,6 +134,7 @@
       <p>&copy; 2024 TaskMaster. All Rights Reserved.</p>
       <p>Manage your tasks efficiently and achieve more with TaskMaster.</p>
     </footer>
+    <script src="../dist/header.js" type="module"></script>
     <script src="../dist/tasks.js" type="module"></script>
   </body>
 </html>

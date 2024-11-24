@@ -30,11 +30,7 @@ type Task = {
 
 const localStorageKey: string = "taska-list";
 
-function renderHeader(): void {
-  const header = document.createElement("header");
-  header.classList.add("header");
-
-  header.innerHTML = `<nav class="navbar navbar-expand-xl">
+const markup: string = `<nav class="navbar navbar-expand-xl">
         <div class="container-fluid">
           <a
             class="navbar-brand logo-container"
@@ -88,7 +84,6 @@ function renderHeader(): void {
           <li><a class="menu-item" href="contacts.html">Contacts</a></li>
         </ul>
       </div>
-      <!-- Modal add task -->
       <section class="modal-content hidden">
         <div class="modal-title-container">
           <h3>Add task</h3>
@@ -127,28 +122,32 @@ function renderHeader(): void {
             </select>
             <div class="invalid-feedback">Please choose a category.</div>
           </div>
-          <div class="mb-3">
-            <label for="descriptionText" class="form-label"
-              >Description (optional)</label
-            >
-            <textarea type="text" class="form-control" id="descriptionText" />
+          <div class="mb-3"><label for="descriptionText" class="form-label">Description(optional)</label>
+          <textarea type="text" class="form-control" id="descriptionText"></textarea>
           </div>
           <div class="mb-3">
-            <label for="deadlineTime" class="form-label">Deadline</label>
+            <label for="deadlineTime" class="form-label">Deadline*</label>
             <input
               type="datetime-local"
               class="form-control"
               id="deadlineTime"
               required
             />
-            <div class="invalid-feedback">Please choose deadline time.</div>
+            <div class="invalid-feedback" >Please choose deadline time.</div>
           </div>
           <button class="btn btn-primary btn-submit-modal" type="submit">
             Submit
           </button>
         </form>
       </section>
-      <div class="overlay hidden"></div>`;
+           <div class="overlay hidden"></div>
+      `;
+
+function renderHeader(): void {
+  const header: HTMLElement = document.createElement("header");
+  header.classList.add("header");
+
+  header.innerHTML = markup;
   document.body.prepend(header);
 }
 
@@ -204,18 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  console.log(overlay);
-  //   if (modal && overlay && openModalBtn) {
-  //     console.log("hjj");
-  //     openModalBtn.addEventListener("click", openModal);
-  //     closeModalBtn.addEventListener("click", closeModal);
-  //     overlay.addEventListener("click", closeModal);
-  //     document.addEventListener("keydown", function (e): void {
-  //       if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-  //         closeModal();
-  //       }
-  //     });
-  //   }
   // Add new task
 
   form.addEventListener("submit", (e) => {
