@@ -230,7 +230,7 @@
   text-decoration: underline;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 744px) {
   .main-container {
     padding: 160px 24px 140px 24px;
   }
@@ -356,13 +356,9 @@
     font-size: 24px;
     margin-top: 16px;
   }
-
-  .footer-container {
-    font-size: 14px;
-  }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1440px) {
   .section-filters-container {
     max-width: 1280px;
   }
