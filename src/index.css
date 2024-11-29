@@ -66,8 +66,9 @@
 }
 
 .image-for-article {
-  height: 220px;
+  /* height: 220px; */
   object-fit: cover;
+  margin: 0 auto;
   margin-bottom: 16px;
 }
 
@@ -147,6 +148,13 @@
     font-size: 28px;
   }
 
+  .articles-section {
+    padding: 0 22px;
+  }
+
+  .image-for-article {
+    height: 390px;
+  }
   .footer-container {
     font-size: 16px;
   }

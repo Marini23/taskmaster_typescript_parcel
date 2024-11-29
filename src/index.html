@@ -24,15 +24,29 @@
       </section>
       <section class="articles-section">
         <div class="article-container">
-          <img
-            srcset="
-              ../src/images/table_1x.jpg  1x
+          <picture class="image-for-article">
+            <source
+              media="(max-width: 743px)"
+              srcset="
+              ../src/images/table_mobile_1x.jpg  
               ../src/images/table_2x.jpg  2x
             "
-            src="../src/images/table_1x.jpg"
-            alt="table"
-            class="image-for-article"
-          />
+            />
+            <source
+              media="(min-width: 744px) and (max-width: 1199px)"
+              srcset="
+              ../src/images/table_tablet_1x.jpg
+              ../src/images/table_tablet_2x.jpg  2x"
+            />
+            <source
+              media="(min-width: 1200px)"
+              srcset="
+              ../src/images/table_mobile_1x.jpg  
+              ../src/images/table_2x.jpg  2x
+            "
+            />
+            <img src="../src/images/table_Tablet_1x.jpg" alt="table" />
+          </picture>
           <article class="article-content">
             <h3 class="article-title">
               Six golden Rules for Better Time Management.
