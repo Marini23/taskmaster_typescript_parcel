@@ -90,12 +90,21 @@
   opacity: 0;
   height: 0;
   overflow: hidden;
-  transition: all 1s ease;
+  /* transition: all 1s ease; */
 }
 
-.article-load-more-open {
+.article-load-more .open {
   opacity: 1;
   height: auto;
+  overflow: visible;
+}
+
+.article-load-more .opening {
+  animation: slideOpen 3s ease forwards;
+}
+
+.article-load-more .closing {
+  animation: slideClose 3s ease forwards;
 }
 
 .btn-read-more {
@@ -132,6 +141,27 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 100%;
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    height: 100%;
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
 }
 
 @media screen and (min-width: 744px) {
