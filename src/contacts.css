@@ -1,5 +1,10 @@
 @import "./variables.css";
 
+.main-container {
+  padding: 180px 16px 140px 16px;
+  margin: 0 auto;
+}
+
 /* Footer */
 
 .footer-container {
