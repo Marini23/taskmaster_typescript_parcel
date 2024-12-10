@@ -13,21 +13,28 @@
     <main class="main-container">
       <section>
         <h1>Contacts</h1>
-        <p>Maryna Udovychenko</p>
-        <p>Linkedin:</p>
-        <p>Phone:</p>
-        <p>Email:</p>
+        <p>Name: Maryna Udovychenko</p>
+        <p>
+          Phone: <a class="mail-tel" href="tel:+48517159527">+48 517-159-527</a>
+        </p>
+        <p>
+          Email:
+          <a class="mail-tel-link" href="mailto:marina.udovychenko@gmail.com"
+            >marina.udovychenko@gmail.com</a
+          >
+        </p>
         <p>Address: Warsaw, Poland</p>
       </section>
       <section>
         <h1>Get In Touch</h1>
-        <div>
-          <div>
-            <input />
-            <input />
+        <form class="contact-form">
+          <div class="input-group">
+            <input type="text" id="name" placeholder="Name" required />
+            <input type="email" id="email" placeholder="Email" required />
           </div>
-          <textarea></textarea>
-        </div>
+          <textarea id="message" placeholder="Message" required></textarea>
+          <button type="button">Send it!</button>
+        </form>
       </section>
     </main>
     <footer class="footer-container">
