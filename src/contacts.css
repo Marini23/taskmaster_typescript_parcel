@@ -1,10 +1,102 @@
 @import "./variables.css";
 
 .main-container {
-  padding: 180px 16px 140px 16px;
+  padding: 180px 16px 60px 16px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
+.contacts-info {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  min-width: 288px;
+  max-width: 330px;
+}
+
+.mail-tel-text {
+  &:hover {
+    color: var(--active-color);
+  }
+  &:active {
+    color: var(--active-color);
+  }
+}
+
+.mail-tel-link {
+  color: var(--dark-color);
+  &:hover {
+    color: var(--active-color);
+  }
+  &:active {
+    color: var(--active-color);
+  }
+}
+
+.get-in-tought {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 288px;
+  max-width: 330px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-text {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border: 1px solid var(--dark-color);
+  background-color: transparent;
+  padding-left: 12px;
+  &:hover {
+    border-color: var(--active-color);
+  }
+  &:focus {
+    border-color: var(--active-color);
+  }
+}
+
+.textarea-text {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--dark-color);
+  background-color: transparent;
+  padding-left: 12px;
+  &:hover {
+    border-color: var(--active-color);
+  }
+  &:focus {
+    border-color: var(--active-color);
+  }
+}
+
+.btn-get-in-tought {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--dark-color);
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
 /* Footer */
 
 .footer-container {

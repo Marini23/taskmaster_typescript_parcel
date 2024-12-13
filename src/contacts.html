@@ -7,17 +7,18 @@
     <title>TaskMaster</title>
     <link rel="stylesheet" href="./common.css" />
     <link rel="stylesheet" href="./header.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./contacts.css" />
   </head>
   <body>
     <main class="main-container">
-      <section>
+      <section class="contacts-info">
         <h1>Contacts</h1>
         <p>Name: Maryna Udovychenko</p>
-        <p>
-          Phone: <a class="mail-tel" href="tel:+48517159527">+48 517-159-527</a>
+        <p class="mail-tel-text">
+          Phone:
+          <a class="mail-tel-link" href="tel:+48517159527">+48 517-159-527</a>
         </p>
-        <p>
+        <p class="mail-tel-text">
           Email:
           <a class="mail-tel-link" href="mailto:marina.udovychenko@gmail.com"
             >marina.udovychenko@gmail.com</a
@@ -25,15 +26,32 @@
         </p>
         <p>Address: Warsaw, Poland</p>
       </section>
-      <section>
+      <section class="get-in-tought">
         <h1>Get In Touch</h1>
         <form class="contact-form">
-          <div class="input-group">
-            <input type="text" id="name" placeholder="Name" required />
-            <input type="email" id="email" placeholder="Email" required />
+          <div class="input-wrap">
+            <input
+              type="text"
+              id="name"
+              placeholder="Name"
+              required
+              class="input-text"
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              required
+              class="input-text"
+            />
           </div>
-          <textarea id="message" placeholder="Message" required></textarea>
-          <button type="button">Send it!</button>
+          <textarea
+            id="message"
+            placeholder="Message"
+            required
+            class="textarea-text"
+          ></textarea>
+          <button type="button" class="btn-get-in-tought">Send it!</button>
         </form>
       </section>
     </main>
