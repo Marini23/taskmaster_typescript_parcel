@@ -126,6 +126,7 @@
   .main-container {
     flex-direction: row;
     padding: 160px 36px 60px 36px;
+    width: 672px;
   }
 
   .contacts-info {
@@ -154,12 +155,11 @@
 
 @media screen and (min-width: 1200px) {
   .main-container {
-    flex-direction: row;
-    padding: 160px 36px 60px 36px;
+    width: 1128px;
   }
 
   .contacts-info {
-    max-width: 420px;
+    max-width: 520px;
   }
 
   .mail-tel-text {
@@ -175,7 +175,7 @@
   }
 
   .get-in-tought {
-    max-width: 420px;
+    max-width: 520px;
   }
 
   .input-text {
