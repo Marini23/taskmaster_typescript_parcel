@@ -1,4 +1,4 @@
-declare module "emailjs-com" {
+declare module "@emailjs/browser" {
   const emailjs: any;
   export default emailjs;
 }
