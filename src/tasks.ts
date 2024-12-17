@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
-import { nanoid } from "nanoid";
 import sprite from "../src/images/symbol-defs.svg";
 
 enum Category {
