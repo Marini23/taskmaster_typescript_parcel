@@ -9,6 +9,7 @@ btnLoadMore.forEach((button: HTMLButtonElement, index) => {
   button.addEventListener("click", (): void => {
     const article = button.closest(".article-container") as HTMLElement;
     const content = article?.querySelector(".article-load-more") as HTMLElement;
+    console.log(content);
     if (content) {
       const dynamicHeight = content.scrollHeight;
       content.style.setProperty("--dynamic-height", `${dynamicHeight}px`);
@@ -26,6 +27,3 @@ btnLoadMore.forEach((button: HTMLButtonElement, index) => {
     }
   });
 });
-
-
-
