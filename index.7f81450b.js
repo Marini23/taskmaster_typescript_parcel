@@ -1,0 +1,250 @@
+function e(e){return e&&e.__esModule?e.default:e}var t=globalThis,i={},o={},s=t.parcelRequire3bba;null==s&&((s=function(e){if(e in i)return i[e].exports;if(e in o){var t=o[e];delete o[e];var s={id:e,exports:{}};return i[e]=s,t.call(s.exports,s,s.exports),s.exports}var a=Error("Cannot find module '"+e+"'");throw a.code="MODULE_NOT_FOUND",a}).register=function(e,t){o[e]=t},t.parcelRequire3bba=s),(0,s.register)("27Lyk",function(e,t){Object.defineProperty(e.exports,"register",{get:()=>i,set:e=>i=e,enumerable:!0,configurable:!0});var i,o=new Map;i=function(e,t){for(var i=0;i<t.length-1;i+=2)o.set(t[i],{baseUrl:e,path:t[i+1]})}}),s("27Lyk").register(new URL("",import.meta.url).toString(),JSON.parse('["ivwOa","index.7f81450b.js","1BK5s","table_mobile_1x.85ae97ab.jpg","kw9Ut","table_mobile_2x.4ced3fe3.jpg","7XMez","walls_mobile_1x.b55aa355.jpg","4cinx","walls_mobile_2x.82a774d1.jpg","8Ou5Q","folders_mobile_1x.cc585da2.jpg","7BQ8x","folders_mobile_2x.452d39d9.jpg"]'));var a={};a=new URL("table_mobile_1x.85ae97ab.jpg",import.meta.url).toString();var n={};n=new URL("table_mobile_2x.4ced3fe3.jpg",import.meta.url).toString();var r={};r=new URL("walls_mobile_1x.b55aa355.jpg",import.meta.url).toString();var l={};l=new URL("walls_mobile_2x.82a774d1.jpg",import.meta.url).toString();var c={};c=new URL("folders_mobile_1x.cc585da2.jpg",import.meta.url).toString();var u={};u=new URL("folders_mobile_2x.452d39d9.jpg",import.meta.url).toString();const m=`
+              <img
+            srcset ="${/*@__PURE__*/e(a)} 1x,
+              ${/*@__PURE__*/e(n)} 2x
+            "
+            src="${/*@__PURE__*/e(a)}"
+            alt="notes on the wall"
+            class="image-for-article"
+          />
+          <article class="article-content">
+            <h3 class="article-title">
+              Six golden Rules for Better Time Management.
+            </h3>
+            <article class="article-text">
+              <p>
+                Time management isn\u{2019}t about controlling the clock\u{2014}it\u{2019}s about
+                managing yourself. There\u{2019}s an old adage that says you can\u{2019}t
+                manage time, but you can manage your actions. This sentiment
+                holds the key to productivity: making small, intentional changes
+                to your habits to focus on what truly matters.
+              </p>
+              <p class="test">
+                <p class="article-load-more">
+                The goal of effective time management is not to cram more tasks
+                into your day but to prioritize the right tasks\u{2014}the ones that
+                drive meaningful results. By doing so, you\u{2019}ll not only feel more
+                fulfilled but also experience benefits like career growth,
+                financial rewards, or simply a bit of extra free time. Think you
+                don\u{2019}t have time to improve your time management skills? Think
+                again! Here are six practical strategies to tweak your habits
+                and see real results. 1. Embrace Change with an Open Mind The
+                foundation of better time management lies in your willingness to
+                change. If you\u{2019}re resistant to trying new approaches, you\u{2019}ll
+                remain stuck in old patterns that don\u{2019}t serve you. Begin by
+                acknowledging that your current habits might need adjustment,
+                and commit to experimenting with strategies that can help you
+                become more efficient and focused. 2. Treat Time Like Money Time
+                is your most valuable resource\u{2014}it\u{2019}s finite and irreplaceable.
+                Unlike money, you can\u{2019}t earn more of it. You have just 1,440
+                minutes each day, so think about how you\u{2019}re spending them. Are
+                you investing your time in activities that align with your goals
+                and values? Whether it\u{2019}s at work or in your personal life, make
+                deliberate choices that prioritize what truly matters to you. 3.
+                Prioritize Like You\u{2019}re Going on Vacation Think about how you
+                prepare for a vacation. You make a long list of tasks, then
+                narrow it down ruthlessly, focusing only on the essentials as
+                your departure date approaches. If you applied this mindset
+                every day, you\u{2019}d accomplish far more of what\u{2019}s important. Start
+                each morning by identifying your top three priorities and let go
+                of tasks that don\u{2019}t contribute to significant results. 4. Weigh
+                the Consequences Before Saying \u{201C}Yes\u{201D} We often agree to new tasks
+                without fully considering their impact. The next time someone
+                asks for your help, pause and think: What will happen if I don\u{2019}t
+                take on this responsibility? Can I realistically deliver on this
+                commitment without compromising my other priorities? By saying
+                \u{201C}No\u{201D} thoughtfully, you\u{2019}ll not only protect your time but also
+                build a reputation for reliability when you do agree to help. 5.
+                Tackle What\u{2019}s Weighing on Your Mind When unresolved tasks linger
+                in your mind, they drain your energy and focus. Whether it\u{2019}s a
+                personal responsibility like fixing your car or a professional
+                challenge like completing a complex report, make it your mission
+                to address these tasks promptly. Clearing mental clutter allows
+                you to redirect your energy toward other meaningful activities.
+                6. Use the T.A.R. Principle: Trash, Action, Reference Emails,
+                documents, and other information can pile up quickly, creating a
+                constant source of distraction. Use the T.A.R. method to
+                categorize everything you encounter: Trash: If something is
+                irrelevant or unnecessary, discard it immediately. Action: If an
+                item requires your attention, identify the next step and add it
+                to your to-do list. Reference: If it\u{2019}s something you may need
+                later, file it in an organized system for easy access. This
+                system keeps you focused on actionable tasks while reducing time
+                spent sifting through clutter. Time management isn\u{2019}t about
+                filling every moment with tasks\u{2014}it\u{2019}s about aligning your actions
+                with your values and goals. Small, consistent changes to how you
+                approach your day can lead to significant improvements in both
+                productivity and satisfaction. Remember, the goal isn\u{2019}t just to
+                do more but to do what matters most. By adopting these six
+                golden rules, you\u{2019}ll take control of your time and create a more
+                balanced, fulfilling life.
+              </p>
+              </p>
+            </article>
+          </article>
+    `,d=`
+             <img
+            srcset="
+              ${/*@__PURE__*/e(r)} 1x,
+              ${/*@__PURE__*/e(l)} 2x
+            "
+            src="${/*@__PURE__*/e(r)}"
+            alt="notes on the wall"
+            class="image-for-article"
+          />
+          <article class="article-content">
+            <h3 class="article-title">
+              Best Time Management Techniques: Find What Works for You.
+            </h3>
+            <article class="article-text ">
+              <p>
+                The key to better time management lies in understanding your
+                specific needs\u{2014}whether you\u{2019}re looking to organize work tasks,
+                streamline study sessions, or focus on personal goals. Below are
+                some of the most effective time management techniques you can
+                adopt, depending on your unique challenges and aspirations.
+              </p>
+              <p class="article-load-more">
+                Primarily focused on management tasks. Choose Your Technique The
+                best time management method depends on your goals and work
+                style. Start with one that resonates with your needs and adapt
+                it as necessary. Whether you're focusing on personal growth,
+                professional tasks, or team projects, adopting these techniques
+                can help you achieve more with less stress. 1. Pomodoro
+                Technique The Pomodoro Technique divides your work into
+                25-minute focused sessions followed by 5-minute breaks. After
+                completing four sessions, you take a longer 15\u{2013}20 minute break.
+                How It Works: Choose a task. Set a timer for 25 minutes. Work on
+                the task until the timer rings. Take a 5-minute break. After
+                four cycles, enjoy a 20-minute break. Best For: Avoiding
+                burnout. Managing distractions. Tackling procrastination. Pros:
+                Encourages intense focus. Helps maintain energy levels. Cons:
+                Fixed intervals may disrupt creative flow. 2. Kanban Method
+                Kanban offers a visual system for tracking tasks through a board
+                with columns like To Do, In Progress, and Done. How It Works:
+                List all your tasks in the Backlog column. Move tasks to To Do,
+                then to In Progress, and finally to Done. Focus on moving tasks
+                steadily across the board. Best For: Visual learners. Managing
+                multiple ongoing projects. Pros: Clear overview of task status.
+                Customizable to suit personal workflows. Cons: Lacks
+                time-specific scheduling. 3. Getting Things Done (GTD) This
+                method involves capturing and organizing every task to create
+                actionable to-do lists. How It Works: Write down all tasks.
+                Clarify which tasks are actionable. Organize tasks by context or
+                category. Regularly review your lists to update priorities. Act
+                on the tasks with clear next steps. Best For: Clearing mental
+                clutter. Prioritizing tasks. Pros: Provides structure to your
+                workflow. Helps identify next steps for tasks. Cons: Requires
+                discipline to review and update lists regularly. 4. Eat That
+                Frog This method emphasizes tackling your hardest or most
+                important task first. How It Works: Identify your \u{201C}frog\u{201D} (the
+                task you\u{2019}re dreading or that has the most impact). Do it first
+                thing in the morning. Move on to smaller tasks after completing
+                the big one. Best For: Overcoming procrastination. Prioritizing
+                high-impact work. Pros: Builds momentum for the rest of the day.
+                Simplifies prioritization. Cons: May feel overwhelming to start
+                with a challenging task. 5. Timeboxing Timeboxing involves
+                assigning specific time slots to tasks. How It Works: List your
+                tasks. Allocate a specific amount of time to each task. Stick to
+                the schedule. Best For: Breaking large projects into manageable
+                chunks. Keeping track of small tasks. Pros: Encourages focus and
+                accountability. Helps manage multiple responsibilities. Cons:
+                Interruptions can disrupt the schedule. 6. Time Blocking Time
+                blocking allocates distinct blocks of time for specific tasks,
+                often using a calendar. How It Works: Create a detailed schedule
+                in your calendar. Assign blocks of time to tasks based on their
+                priority. Include breaks in your schedule. Best For:
+                Comprehensive day planning. Focusing on deep work. Pros:
+                Encourages focused work. Promotes better control over your day.
+                Cons: Requires adjustments for unexpected interruptions. 7.
+                Inbox Zero This technique aims to manage your email inbox by
+                reducing the number of unread or pending messages to zero. How
+                It Works: Schedule specific times to check your inbox. Address
+                emails immediately: reply, delete, archive, or delegate.
+                Organize emails into folders for action or reference. Best For:
+                Keeping email under control. Reducing distraction from constant
+                notifications. Pros: Reduces email clutter. Allocates focused
+                time for inbox management. Cons: Time-consuming to implement
+                fully. 8. Who\u{2019}s Got the Monkey? This method focuses on
+                delegating tasks effectively, making it especially useful for
+                managers. How It Works: Identify tasks (\u{201C}monkeys\u{201D}) and who
+                should handle them. Assign tasks with clear expectations. Follow
+                up to ensure progress. Best For: Delegating responsibilities.
+                Improving team productivity. Pros: Increases team
+                accountability. Frees up time for strategic priorities.
+              </p>
+            </article>
+          </article>
+          `,h=`
+          <img
+            srcset="
+              ${/*@__PURE__*/e(c)} 1x,
+              ${/*@__PURE__*/e(u)} 2x
+            "${/*@__PURE__*/e(c)}
+            alt="table"
+            class="image-for-article"
+          />
+          <article class="article-content">
+            <h3 class="article-title">
+              Explore different approaches to Time Management Styles.
+            </h3>
+            <article class="article-text">
+              <p>
+                Not all time management techniques work for everyone. The way we
+                approach tasks, our habits, and how we deal with
+                responsibilities define our time management style. Each style
+                has its strengths but also comes with specific challenges.
+                Here's an overview of six common time management styles and
+                their issues.
+              </p>
+              <p class="article-load-more">
+                1. Time Martyr Time martyrs prioritize others' needs over their
+                own. They often fill their schedules with tasks for others,
+                avoiding their own responsibilities, which feel overwhelming.
+                This behavior might bring external validation but neglects
+                personal growth and satisfaction. Common Issues: Multitasking
+                Missed deadlines Ineffective scheduling Skipping breaks 2.
+                Procrastinator Procrastinators delay tasks, often claiming they
+                work better under pressure. While this approach may sometimes
+                yield results, it frequently leads to stress, anxiety, and
+                subpar outcomes. Common Issues: Missed deadlines Ineffective
+                scheduling Multitasking 3. Distractor Distractors have good
+                intentions but struggle with focus. They\u{2019}re easily sidetracked
+                by interruptions, like impromptu chats, phone calls, or
+                unplanned tasks, which prevents them from completing their work
+                effectively. Common Issues: Multitasking Missed deadlines
+                Ineffective scheduling 4. Underestimator Underestimators often
+                misjudge how long tasks will take. They optimistically set
+                deadlines that are difficult to meet, leading to rushed work and
+                unmet expectations. Common Issues: Missed deadlines Ineffective
+                scheduling 5. Firefighter Firefighters thrive on urgency and
+                constantly put out "fires" \u{2014} tackling problems as they arise.
+                While they appear busy and productive, this reactive approach
+                can lead to burnout and a lack of focus on long-term goals.
+                Common Issues: Missed deadlines Skipping breaks Ineffective
+                scheduling 6. Perfectionist Perfectionists strive for flawless
+                results, which often makes them overwork tasks. While their
+                commitment to quality is admirable, their inability to stop
+                tweaking can cause delays, missed deadlines, and even burnout.
+                Common Issues: Missed deadlines Skipping breaks How to Overcome
+                Challenges Each time management style has room for improvement.
+                The key is identifying your challenges and adopting time
+                management techniques that address them: Time Martyrs can learn
+                to say \u{201C}no\u{201D} and prioritize their own tasks using techniques like
+                Eat That Frog or Time Blocking. Procrastinators may benefit from
+                structured approaches like the Pomodoro Technique to break tasks
+                into manageable segments. Distractors can use Timeboxing or
+                create focused environments by silencing notifications and
+                minimizing interruptions. Under estimators should plan with
+                SMART goals, breaking tasks into smaller, realistic steps.
+                Firefighters can gain control with visual tools like Kanban
+                boards, focusing on long-term priorities. Perfectionists should
+                embrace Timeboxing, which sets clear boundaries on how long to
+                spend on a task. By recognizing your time management style and
+                addressing its pitfalls, you can develop more effective habits
+                and achieve a healthier work-life balance.
+              </p>
+            </article>
+          </article>
+         `;document.addEventListener("DOMContentLoaded",()=>{!function(){let e=document.querySelector(".article-one"),t=document.querySelector(".article-two"),i=document.querySelector(".article-three");e.insertAdjacentHTML("afterbegin",m),t.insertAdjacentHTML("afterbegin",d),i.insertAdjacentHTML("afterbegin",h)}()});
+//# sourceMappingURL=index.7f81450b.js.map

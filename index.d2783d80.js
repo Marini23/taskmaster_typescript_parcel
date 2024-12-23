@@ -1,0 +1,2 @@
+document.querySelectorAll(".btn-read-more").forEach((e,t)=>{e.textContent="Read More...",e.addEventListener("click",()=>{let t=e.closest(".article-container"),o=t?.querySelector(".article-load-more");if(console.log(o),o){let t=o.scrollHeight;o.style.setProperty("--dynamic-height",`${t}px`),o.classList.toggle("article-load-more-open"),o.addEventListener("animationend",()=>{o.style.removeProperty("--dynamic-height")},{once:!0}),e.textContent=o.classList.contains("article-load-more-open")?"Read Less...":"Read More..."}})});
+//# sourceMappingURL=index.d2783d80.js.map
